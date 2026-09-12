@@ -1,5 +1,0 @@
-17:20:58 |  | WUWA backup 2 file ke /root/hermes-workspace/Flavenz/backup/wuwa | before= | after=
-17:20:59 |  | WUWA preset=balanced deployed (forbidden filtered) ke /tmp/wuwa_test/Android/data/com.kurogame.wutheringwaves.global/files/UE4Game/Client/Client/Saved/Config/Android | before= | after=
-17:21:50 |  | WUWA backup 1 file ke /root/hermes-workspace/Flavenz/backup/wuwa | before= | after=
-17:21:50 |  | WUWA preset=balanced deployed (forbidden filtered) ke /tmp/wuwa_test/Android/data/com.kurogame.wutheringwaves.global/files/UE4Game/Client/Client/Saved/Config/Android | before= | after=
-17:21:50 |  | WUWA restore vanilla (3 file dari backup) | before= | after=
