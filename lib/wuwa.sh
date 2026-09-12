@@ -15,13 +15,8 @@ WUWA_APPLIED="$BACKUP_DIR/wuwa_applied.txt"
 # Cvar di daftar ini di-reject/di-track oleh ConfigMonitor -> auto-dihapus saat deploy
 FORBIDDEN_CVARS="Kuro.CppEffectsystem.UseLowMemoryPlayerEffectLruCapacity r.AFME.Enable r.AsyncComputePSO r.DetailMode r.FEstimation.Option r.Kuro.SkeletalMesh.LODDistanceScale r.Kuro.TexturePool.ExtraBudgetMB r.KuroFI.Enable r.KuroMaterialQualityLevel r.LightMaxDrawDistanceScale r.MaterialQualityLevel r.MFRC.Enable r.MipMapLODBias r.Mobile.DeviceEvaluation r.MobileContentScaleFactor r.ParallelInitViews r.RayTracing.LimitDevice r.ScreenPercentage r.ScreenSizeCullRatioFactor r.SecondaryScreenPercentage.GameViewport r.Shadow.DistanceScale r.Shadow.MaxCSMResolution r.Shadow.MaxResolution r.streaming.AllowExtendedPoolSize r.Streaming.Boost r.Streaming.CPUReadback r.Streaming.DistancePriority.Texture2DArrayPriority r.streaming.ExtendedPoolSizeForceAllMipsThresholdPercentage r.streaming.ExtendedPoolSizeThresholdPercentage r.Streaming.KuroExtraPoolSize r.Streaming.LimitPoolSizeTOVRAM r.streaming.MaxExtendedPoolSizePercentage r.streaming.MaxExtendedPoolsizeVRAMPercentage r.Streaming.MaxNumTexturesTostreamPerFrame r.Streaming.MaxTempMemoryAllowed r.Streaming.MaxTempMemoryAllowedForTexture2DArray r.Streaming.MinBoost r.Streaming.MinMipForSplitRequest r.Streaming.PoolSize r.Streaming.PoolSizeExtraForTexture2DArray r.Streaming.Texture2DArrayStreamOutHysteresis r.Streaming.UseAllMips r.Streaming.UseAsyncCPUReadback r.Streaming.UseFixedPoolsize r.Streamline.DLSSG.RetainResourceswhenoff r.TextureGroup.Landscape.TextureLODBias r.ViewDistanceScale r.VolumetricFog r.VRS.EnableMaterial r.VRS.EnableMesh s.PriorityAsyncLoadingExtraTime"
 
-# GAME.INI - GameUserSettings + scalability runtime (sg.*)
-# File kedua di config dir; sg.* di sini override preset in-game tanpa sentuh Engine.ini
-GAME_INI_SG="[/Script/Engine.GameUserSettings]
-bUseVSync=False
-FrameRateLimit=60.000000
-[/Script/Engine.InputSettings]
-bEnableMouseSmoothing=False"
+# GAME.INI - file kedua di config dir; diisi via wuwa_set_framerate()
+# (sg.* scalability efektifnya via DeviceProfile, bukan Game.ini)
 
 # GPU FAMILY ADRENO (untuk forcer DeviceProfiles)
 # Adreno 735 (SD 8s Gen 3) match ke Android_Adreno735 lalu fallback Adreno6xx/High

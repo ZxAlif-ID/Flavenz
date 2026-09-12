@@ -1,0 +1,24 @@
+name: Feature request / Usulan fitur
+description: Suggest an idea for Flavenz / Usulkan ide untuk Flavenz
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / Masalah
+      description: "What limitation are you hitting? / Keterbatasan apa yang kamu hadapi?"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution / Usulan solusi
+    validations:
+      required: true
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check / Cek lingkup
+      options:
+        - label: "This is within Flavenz scope (sysfs tuning / WuWa INI configs / Termux tooling) — not a game ToS bypass / Ini dalam lingkup Flavenz, bukan bypass ToS game"
+          required: true

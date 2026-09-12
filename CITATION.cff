@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use Flavenz in your research or project, please cite it."
+title: Flavenz
+type: software
+authors:
+  - alias: ZxAlif-ID
+    website: "https://github.com/ZxAlif-ID"
+version: 1.0.0
+date-released: "2026-09-13"
+license: Apache-2.0
+repository-code: "https://github.com/ZxAlif-ID/Flavenz"
+keywords:
+  - android
+  - termux
+  - performance
+  - thermal
+  - wuthering-waves
+  - snapdragon
+abstract: >-
+  Termux-based performance suite for rooted Android: thermal/CPU/GPU/WALT
+  sysfs tuning plus a Wuthering Waves INI config manager with automatic
+  Kuro forbidden-CVar filtering. Design reference: AZenith.

@@ -1,0 +1,64 @@
+name: Bug report / Laporan bug
+description: Report a problem with tuning actions or WuWa configs / Laporkan masalah pada aksi tuning atau config WuWa
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Please fill in your device details — tuning values are device-specific.
+        / Terima kasih sudah melapor. Isi detail device kamu — nilai tuning spesifik per device.
+  - type: input
+    id: device
+    attributes:
+      label: Device / SoC / GPU
+      description: "e.g. Poco F6 / Snapdragon 8s Gen 3 / Adreno 735"
+      placeholder: "model / SoC / GPU"
+    validations:
+      required: true
+  - type: input
+    id: android
+    attributes:
+      label: Android version + root solution / Versi Android + solusi root
+      description: "e.g. HyperOS (Android 14) + KernelSU-Next 3.3.0"
+    validations:
+      required: true
+  - type: input
+    id: termux
+    attributes:
+      label: Termux + Flavenz version / Versi Termux + Flavenz
+      description: "e.g. Termux 0.118 + Flavenz 1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area / Area yang bermasalah
+      options:
+        - Performance Profiles / CPU / WALT
+        - GPU (governor / pwrlevel / adrenoboost)
+        - Thermal Control
+        - WuWa Config Manager
+        - Monitor / Capability Report
+        - Backup / Restore
+        - Other / Lainnya
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce / Langkah reproduksi
+      placeholder: "1. ...\n2. ..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs actual / Harapan vs kenyataan
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log output
+      description: "Paste relevant lines from logs/ther_t3.log or logs/changes.log"
+      render: shell

@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  shellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run shellcheck (error severity)
+        uses: ludeeus/action-shellcheck@master
+        with:
+          severity: error
+
+  ini-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify no forbidden CVars in preset sources
+        run: |
+          curl -fsSL "https://raw.githubusercontent.com/Arglax/Mobile-WuWa-Config/main/.github/forbidden_cvars.txt" -o /tmp/forbidden.txt
+          python3 - << 'EOF'
+          import glob, sys
+          forb = set()
+          for line in open('/tmp/forbidden.txt'):
+              line = line.strip()
+              if line and not line.startswith('#'):
+                  forb.add(line)
+          bad = []
+          for f in sorted(glob.glob('configs/wuwa/*.ini')):
+              for i, line in enumerate(open(f), 1):
+                  s = line.strip()
+                  if s.startswith(';') or s.startswith('['):
+                      continue
+                  key = s.split('=')[0].strip()
+                  if key in forb:
+                      bad.append(f"{f}:{i}: {key}")
+          if bad:
+              print("FORBIDDEN CVARS FOUND:")
+              print("\n".join(bad))
+              sys.exit(1)
+          print("OK: no forbidden CVars in preset sources")
+          EOF

@@ -270,7 +270,7 @@ Sebelumnya capability report tampilkan "GPU Performance: Not Supported" merah â€
 ## WuWa Config Manager (Flavenz addition)
 
 Referensi design: AZenith module (game config + sysfs tuning satu paket).
-Riset lengkap: `~/hermes-workspace/Games/wuwa.md`.
+Riset lengkap config Wuthering Waves: lihat README.md section Sumber & Referensi.
 
 ### Menu [7]
 
