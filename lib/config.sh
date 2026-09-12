@@ -1,6 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-VERSION="V3.0"
+VERSION="V1.0"
 
 R='\033[0;31m'
 G='\033[0;32m'
